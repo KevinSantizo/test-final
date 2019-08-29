@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Registro</h1>
+
+    <form action="{% url 'user:register' %}" method="POST">
+        {% csrf_token %}
+    <p>
+    <label>Nombre:</label>
+    <input type="text" name="first_name" placeholder="Nombre" required>
+    </p>
+    <p>
+    <label>Apellido:</label>
+    <input type="text" name="last_name" placeholder="Apellido" required>
+    </p>
+    <p>
+    <label>Teléfono:</label>
+    <input type="text" name="phone" placeholder="Número de Teléfono">
+    </p>
+    <p>
+    <label>Seleccionar un permiso de Usuario:</label>
+    <select name="permissions">
+        <option selected>Seleccione...</option>
+        <option value="0">Colaborador</option>
+        <option value="1">Administrador</option>
+    </select>
+    </p>
+        <button type="submit"> Registrarse </button>
+    </form>
+</body>
+</html>
